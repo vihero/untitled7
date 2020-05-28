@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Hello {{ name }}</h1>
+<form action="go">
+    <input type="text" placeholder="enter name" name="name"><br>
+    <br>
+    <input type="text" placeholder="enter last name" name="lastname"><br>
+    <br><br>
+    <input type="password" name="password" placeholder="Password">
+    <br><br>
+    <input type="submit" name="sumbit">
+</form>
+<a href="http://127.0.0.1:8000/go?name=Gayatri&lastname=patil&password=123">Click here</a>
+
+<form action="accounts/register">
+
+    <button type="submit">Register</button>
+</form>
+<a href="accounts/login">Login</a>
+
+<div class="container">
+          <!-- Video Card -->
+      <div class="card-group">
+{% for dat in data %}
+      <a href="http://127.0.0.1:8000/fun?FluteType=C">
+      <div class="video" >
+      <div class="card mt-4 mr-2">
+        <div class="card-body">
+          <div class="youtube">
+          <iframe width="300" height="200" src="https://www.youtube.com/embed/{{ dat.video_id }}"
+           frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+          </div>
+          <h5>Flute Type: {{ dat.Flute_type }}</h5>
+            <h6>Price :{{ dat.Price }}</h6>
+        </div>
+     </div>
+   </div>
+   </a>
+
+{% endfor %}
+      </div>
+</div>
+
+</body>
+</html>
